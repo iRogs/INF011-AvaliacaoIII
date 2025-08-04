@@ -2,7 +2,7 @@
 
 ## Integrantes:
 
-- Iainara Cerqueira dos Santos
+- Iainara Araujo Cerqueira Santos
 - Raí Salomão Alves Mangueira
 - Rodrigo Ansah Carvalho Frempong
 
