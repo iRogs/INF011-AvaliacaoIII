@@ -3,9 +3,12 @@ package br.ifba.edu.aval3.State;
 import java.time.Duration;
 import br.ifba.edu.aval.model.BoletimProva;
 import br.ifba.edu.aval.model.Prisma;
-import br.ifba.edu.aval.exception.AtividadeNaoPermitidaException;
 
-public class PistaState implements FaseDaProvaState {
+/**
+ * Classe que representa o estado de Pista, onde a prova está em andamento.
+ * Neste estado, é permitido registrar passagens de prisma e chegada.
+ */
+public class PistaState extends AbstractFaseDaProvaState {
 
     @Override
     public void registrar(BoletimProva boletim, Integer prismaID, Duration tempo) {
@@ -23,13 +26,4 @@ public class PistaState implements FaseDaProvaState {
         boletim.setMinutoPartidaEfetivoInterno(minuto);
     }
 
-    @Override
-    public void apresentarPraLargada(BoletimProva boletim) throws AtividadeNaoPermitidaException {
-        throw new AtividadeNaoPermitidaException("Fase não permite se apresentar pra largada.");
-    }
-
-    @Override
-    public void registrarLargada(BoletimProva boletim) throws AtividadeNaoPermitidaException {
-        throw new AtividadeNaoPermitidaException("Atleta já largou.");
-    }
 }

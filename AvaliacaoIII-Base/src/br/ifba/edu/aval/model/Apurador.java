@@ -21,7 +21,7 @@ public class Apurador {
 	}
 	
 	public Duration apurar(BoletimProva boletim) throws DNFException, AtividadeNaoPermitidaException {
-        // O processo de apura��o agora � simplesmente iniciar a chamada na cadeia de responsabilidade.
+        // O processo de apuração agora é simplesmente iniciar a chamada na cadeia de responsabilidade.
         if(this.cadeiaDeRegras != null) {
             // A chamada inicial passa o "this" como contexto e o tempo base como ZERO.
             return this.cadeiaDeRegras.apurar(boletim, Duration.ZERO, this);

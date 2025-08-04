@@ -101,7 +101,4 @@ public class SinaleticaBuilder extends AbstractOrientacaoBuilder implements Orie
 		
 	}
 
-
-	
-
 }

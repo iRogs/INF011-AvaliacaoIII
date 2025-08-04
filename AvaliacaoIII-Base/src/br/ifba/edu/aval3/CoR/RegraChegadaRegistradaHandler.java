@@ -5,7 +5,10 @@ import br.ifba.edu.aval.model.*;
 import br.ifba.edu.aval.exception.AtividadeNaoPermitidaException;
 import br.ifba.edu.aval.exception.DNFException;
 
-// ConcreteHandler: Primeira e mais fundamental regra, verifica se o atleta completou a prova.
+/**
+ * ConcreteHandler: Primeira e mais fundamental regra, verifica se o atleta completou a prova.
+ * Se o atleta não registrou a chegada, lança uma exceção DNFException.
+ */
 public class RegraChegadaRegistradaHandler extends RegraApuracaoHandler {
 
     public RegraChegadaRegistradaHandler(RegraApuracaoHandler proxima) {
@@ -18,7 +21,8 @@ public class RegraChegadaRegistradaHandler extends RegraApuracaoHandler {
         if (tempoChegada == null) {
             throw new DNFException("Atleta não registrou chegada");
         }
-        // Se a chegada foi registrada, passa para a pr�xima regra com o tempo de chegada como base.
+        // Se a chegada foi registrada, passa para a próxima regra com o tempo de chegada como base.
         return passarParaProximo(boletim, tempoChegada, apuradorContexto);
     }
+    
 }

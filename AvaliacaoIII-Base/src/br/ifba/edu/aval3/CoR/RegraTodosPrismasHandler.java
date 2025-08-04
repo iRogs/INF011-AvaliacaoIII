@@ -6,7 +6,10 @@ import br.ifba.edu.aval.exception.AtividadeNaoPermitidaException;
 import br.ifba.edu.aval.exception.DNFException;
 import br.ifba.edu.aval.model.*;
 
-// ConcreteHandler: Verifica se todos os prismas do percurso foram registrados.
+/**
+ * ConcreteHandler: Verifica se todos os prismas do percurso foram registrados.
+ * Se algum prisma não foi registrado, lança uma exceção DNFException.
+ */
 public class RegraTodosPrismasHandler extends RegraApuracaoHandler {
 
     public RegraTodosPrismasHandler(RegraApuracaoHandler proxima) {
@@ -23,4 +26,5 @@ public class RegraTodosPrismasHandler extends RegraApuracaoHandler {
         }
         return passarParaProximo(boletim, tempoAtual, apuradorContexto);
     }
+    
 }

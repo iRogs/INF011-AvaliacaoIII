@@ -1,11 +1,13 @@
 package br.ifba.edu.aval3.State;
 
-import java.time.Duration;
 import br.ifba.edu.aval.model.BoletimProva;
-import br.ifba.edu.aval.exception.AtividadeNaoPermitidaException;
 
-
-public class MomentoDaLargadaState implements FaseDaProvaState {
+/**
+ * Classe que representa o estado de Momento da Largada, onde o boletim foi apresentado
+ * e a largada pode ser registrada.
+ * Neste estado, é permitido registrar a largada e atrasos na partida.
+ */
+public class MomentoDaLargadaState extends AbstractFaseDaProvaState {
 
     @Override
     public void apresentarPraLargada(BoletimProva boletim) {
@@ -18,17 +20,7 @@ public class MomentoDaLargadaState implements FaseDaProvaState {
 
     @Override
     public void registrarAtrasoPartida(BoletimProva boletim, Long minutoPartidaEfetivo) {
-              
         boletim.setMinutoPartidaEfetivoInterno(minutoPartidaEfetivo);
     }
 
-    @Override
-    public void registrar(BoletimProva boletim, Integer prismaID, Duration tempo) throws AtividadeNaoPermitidaException {
-        throw new AtividadeNaoPermitidaException("Não pode registrar passagem de prisma antes da largada.");
-    }
-
-    @Override
-    public void registrarChegada(BoletimProva boletim, Duration tempo) throws AtividadeNaoPermitidaException {
-        throw new AtividadeNaoPermitidaException("Não pode registrar chegada antes da largada.");
-    }
 }

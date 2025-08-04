@@ -5,7 +5,10 @@ import br.ifba.edu.aval.exception.AtividadeNaoPermitidaException;
 import br.ifba.edu.aval.exception.DNFException;
 import br.ifba.edu.aval.model.*;
 
-// ConcreteHandler: Modifica o tempo de prova, aplicando a penalidade de atraso.
+/**
+ * ConcreteHandler: Modifica o tempo de prova, aplicando a penalidade de atraso.
+ * Se o atleta tiver minutos de atraso, adiciona essa penalidade ao tempo atual.
+ */
 public class RegraPenalidadeAtrasoHandler extends RegraApuracaoHandler {
 
     public RegraPenalidadeAtrasoHandler(RegraApuracaoHandler proxima) {
@@ -21,4 +24,5 @@ public class RegraPenalidadeAtrasoHandler extends RegraApuracaoHandler {
 
         return passarParaProximo(boletim, tempoComPenalidade, apuradorContexto);
     }
+    
 }

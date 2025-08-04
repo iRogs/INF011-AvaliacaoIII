@@ -6,7 +6,10 @@ import br.ifba.edu.aval.model.*;
 import br.ifba.edu.aval.exception.AtividadeNaoPermitidaException;
 import br.ifba.edu.aval.exception.DNFException;
 
-// ConcreteHandler: Verifica se os prismas foram visitados na ordem correta.
+/**
+ * ConcreteHandler: Verifica se os prismas foram visitados na ordem correta.
+ * Se algum prisma foi registrado fora de ordem, lança uma exceção DNFException.
+ */
 public class RegraOrdemPrismasHandler extends RegraApuracaoHandler {
 
     public RegraOrdemPrismasHandler(RegraApuracaoHandler proxima) {
@@ -27,4 +30,5 @@ public class RegraOrdemPrismasHandler extends RegraApuracaoHandler {
         }
         return passarParaProximo(boletim, tempoAtual, apuradorContexto);
     }
+    
 }
